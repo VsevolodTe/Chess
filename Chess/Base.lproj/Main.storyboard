@@ -1,24 +1,404 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZWY-ig-7sS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Шахматные фигуры -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-ai-72s">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L1R-O9-u7x">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yq8-af-IDl">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="190.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♔♚"/>
+                                                <connections>
+                                                    <segue destination="ePp-JD-0s1" kind="show" id="Yaz-Cn-zM0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-qh-OQf">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="190.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♕♛"/>
+                                                <connections>
+                                                    <segue destination="OlQ-6f-wd5" kind="show" id="P7E-nx-X7k"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xVP-Es-xCG">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZ6-Rl-lLb">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="190"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♖♜"/>
+                                                <connections>
+                                                    <segue destination="YMe-GY-Bri" kind="show" id="zY6-Zg-ZDN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrj-20-GLG">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="190"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♗♝"/>
+                                                <connections>
+                                                    <segue destination="zDx-FE-D3O" kind="show" id="iRT-GG-6HG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oNL-LH-9tb">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lf-iN-HiR">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="190.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♘♞"/>
+                                                <connections>
+                                                    <segue destination="b10-4b-6fY" kind="show" id="jw3-u4-ML8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-Ll-zvT">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="190.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="♙♟"/>
+                                                <connections>
+                                                    <segue destination="mUQ-vq-dSv" kind="show" id="EKA-I4-x4g"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ELx-ai-72s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="MWd-Zj-tV5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ELx-ai-72s" secondAttribute="trailing" constant="16" id="ReC-LE-ZZg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ELx-ai-72s" secondAttribute="bottom" constant="16" id="SmD-HZ-qqZ"/>
+                            <constraint firstItem="ELx-ai-72s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="siY-Gz-34z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Шахматные фигуры " id="GGS-6c-R4F">
+                        <barButtonItem key="backBarButtonItem" title="Назад " id="IEN-un-efT"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="860" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JO9-4Q-qai">
+            <objects>
+                <viewController id="ePp-JD-0s1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hCM-Ph-vU5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NlX-lv-jAG">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♔♚" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oO6-2u-8aY">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Король" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PCS-dL-fft">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Самая ценная фигура, поскольку неустранимая угроза взятия (эта ситуация называется «мат») означает проигрыш партии." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Yu-fh-MAx" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NlX-lv-jAG" firstAttribute="top" secondItem="Znq-Qa-zsR" secondAttribute="top" constant="16" id="0zI-FJ-Sat"/>
+                            <constraint firstItem="Znq-Qa-zsR" firstAttribute="trailing" secondItem="NlX-lv-jAG" secondAttribute="trailing" constant="16" id="9iG-av-7cc"/>
+                            <constraint firstItem="Znq-Qa-zsR" firstAttribute="bottom" secondItem="NlX-lv-jAG" secondAttribute="bottom" constant="16" id="vXa-9z-Vxu"/>
+                            <constraint firstItem="NlX-lv-jAG" firstAttribute="leading" secondItem="Znq-Qa-zsR" secondAttribute="leading" constant="16" id="xVG-pb-Mkd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Znq-Qa-zsR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwI-hh-LXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z8V-zh-W83">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZWY-ig-7sS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fCR-zg-ZIU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Goa-Dh-PlJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3A-N4-qc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="adL-ke-5Rw">
+            <objects>
+                <viewController id="OlQ-6f-wd5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XSP-sK-1j5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SoW-SV-yWw">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♕♛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-Uk-4GO">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ферзь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MBA-op-eMt">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YXe-t0-YCD" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <string key="text">Самая сильная фигура, поскольку ходит на любое число полей по вертикали, горизонтали или диагонали — соединяет в себе ходы ладьи и слона.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SoW-SV-yWw" firstAttribute="leading" secondItem="kCT-bg-3qE" secondAttribute="leading" constant="16" id="0mv-f7-ijE"/>
+                            <constraint firstItem="kCT-bg-3qE" firstAttribute="bottom" secondItem="SoW-SV-yWw" secondAttribute="bottom" constant="16" id="6Fd-4l-pyg"/>
+                            <constraint firstItem="kCT-bg-3qE" firstAttribute="trailing" secondItem="SoW-SV-yWw" secondAttribute="trailing" constant="16" id="HzD-RW-7jv"/>
+                            <constraint firstItem="SoW-SV-yWw" firstAttribute="top" secondItem="kCT-bg-3qE" secondAttribute="top" constant="16" id="fSm-Aa-sIy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kCT-bg-3qE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnU-7W-3yQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Vx-N5-JVz">
+            <objects>
+                <viewController id="b10-4b-6fY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XW0-0y-pnK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oVq-29-iNt">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♘♞" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-6K-lYk">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Конь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F2v-BJ-Tqt">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-Eh-tsL" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <string key="text">Может пойти на одно из полей, ближайших к тому, на котором он стоит, но не на той же самой горизонтали, вертикали или диагонали, т.е. он ходит русской буквой «Г»</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ydK-Ti-jxC" firstAttribute="trailing" secondItem="oVq-29-iNt" secondAttribute="trailing" constant="16" id="EIg-Lf-s9o"/>
+                            <constraint firstItem="oVq-29-iNt" firstAttribute="top" secondItem="ydK-Ti-jxC" secondAttribute="top" constant="16" id="TqE-cN-dr5"/>
+                            <constraint firstItem="oVq-29-iNt" firstAttribute="leading" secondItem="ydK-Ti-jxC" secondAttribute="leading" constant="16" id="naG-dh-vMG"/>
+                            <constraint firstItem="ydK-Ti-jxC" firstAttribute="bottom" secondItem="oVq-29-iNt" secondAttribute="bottom" constant="16" id="rcx-Wq-ldw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ydK-Ti-jxC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D04-NK-0fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="827"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WIp-Ny-n4c">
+            <objects>
+                <viewController id="zDx-FE-D3O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rbE-S0-Fla">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3lu-Cr-KKQ">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♗♝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a6l-zg-wpJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слон" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8gV-vT-wwL">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ходит на любое число полей по диагонали." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vDk-u9-JDD" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3lu-Cr-KKQ" firstAttribute="leading" secondItem="AN2-Qp-AiE" secondAttribute="leading" constant="16" id="eAf-Z7-fdi"/>
+                            <constraint firstItem="AN2-Qp-AiE" firstAttribute="bottom" secondItem="3lu-Cr-KKQ" secondAttribute="bottom" constant="16" id="hNX-QN-JgM"/>
+                            <constraint firstItem="AN2-Qp-AiE" firstAttribute="trailing" secondItem="3lu-Cr-KKQ" secondAttribute="trailing" constant="16" id="ofg-H8-SKg"/>
+                            <constraint firstItem="3lu-Cr-KKQ" firstAttribute="top" secondItem="AN2-Qp-AiE" secondAttribute="top" constant="16" id="udL-J0-1XN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AN2-Qp-AiE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zve-U7-diE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="828"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wsq-Bc-4CZ">
+            <objects>
+                <viewController id="mUQ-vq-dSv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dcr-tU-klm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zpx-7s-QOU">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♙♟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nv5-ob-F1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пешка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n71-0s-J6z">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GvL-au-vVh" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <string key="text">Ходит на одно поле по вертикали вперёд. Из исходного положения может также сделать первый ход на два поля вперёд. Бьёт на одно поле по диагонали вперёд.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o4Y-LM-t3J" firstAttribute="trailing" secondItem="Zpx-7s-QOU" secondAttribute="trailing" constant="16" id="UKB-CT-E33"/>
+                            <constraint firstItem="Zpx-7s-QOU" firstAttribute="top" secondItem="o4Y-LM-t3J" secondAttribute="top" constant="16" id="UM8-r1-k5A"/>
+                            <constraint firstItem="Zpx-7s-QOU" firstAttribute="leading" secondItem="o4Y-LM-t3J" secondAttribute="leading" constant="16" id="fcr-Dv-FUV"/>
+                            <constraint firstItem="o4Y-LM-t3J" firstAttribute="bottom" secondItem="Zpx-7s-QOU" secondAttribute="bottom" constant="16" id="rue-iv-WtR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o4Y-LM-t3J"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iP-EM-Ktl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2988" y="826"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cVh-bz-7hi">
+            <objects>
+                <viewController id="YMe-GY-Bri" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GS0-18-LbW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="reK-7g-HV3">
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♖♜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RYB-jm-DP6">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ладья " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RQN-Qe-tpG">
+                                        <rect key="frame" x="0.0" y="190.5" width="343" height="190"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ходит на любое число полей по вертикали или горизонтали. Может участвовать в рокировке." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DWm-Ma-DB0" userLabel="Король - самая важная фигура в шахматах. При гибели короля игра заканчиватся.">
+                                        <rect key="frame" x="0.0" y="380.5" width="343" height="190.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qcz-lt-yC0" firstAttribute="bottom" secondItem="reK-7g-HV3" secondAttribute="bottom" constant="16" id="DRb-au-HBy"/>
+                            <constraint firstItem="reK-7g-HV3" firstAttribute="top" secondItem="Qcz-lt-yC0" secondAttribute="top" constant="16" id="DsZ-jZ-Adb"/>
+                            <constraint firstItem="reK-7g-HV3" firstAttribute="leading" secondItem="Qcz-lt-yC0" secondAttribute="leading" constant="16" id="IO2-xD-VNz"/>
+                            <constraint firstItem="Qcz-lt-yC0" firstAttribute="trailing" secondItem="reK-7g-HV3" secondAttribute="trailing" constant="16" id="igz-mu-nUb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qcz-lt-yC0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVB-Iv-jb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2988" y="133"/>
         </scene>
     </scenes>
 </document>
